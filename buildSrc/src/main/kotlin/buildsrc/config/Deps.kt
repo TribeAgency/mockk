@@ -16,7 +16,8 @@ object Deps {
         const val coroutines = "1.6.4"
         const val slfj = "2.0.5"
         const val logback = "1.4.5"
-        const val jooq = "3.19.14"
+        const val jooq = "3.20.2"
+//        const val jooq = "3.19.14"
         const val junitJupiter = "5.8.2"
         const val junit4 = "4.13.2"
 

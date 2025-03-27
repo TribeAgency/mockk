@@ -2,7 +2,9 @@ package io.mockk.impl.jooq
 
 import io.mockk.every
 import io.mockk.mockk
+import org.jooq.Record
 import org.jooq.impl.TableImpl
+import org.jooq.impl.UpdatableRecordImpl
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
@@ -13,6 +15,14 @@ class JooqTest {
         val tableImpl = mockk<TableImpl<*>>()
         every { tableImpl.name } returns "test name"
         assertEquals("test name", tableImpl.name)
+    }
+
+    @Test
+    fun `should mock jOOQ UpdatableRecordImpl class`() {
+        val updateableRecord = mockk<UpdatableRecordImpl<*>>()
+        val record = mockk<Record>()
+        every { updateableRecord.key() } returns record
+        assertEquals(record, updateableRecord.key())
     }
 
 }
